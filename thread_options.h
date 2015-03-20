@@ -222,6 +222,7 @@ struct thread_options {
 	unsigned int rate[DDIR_RWDIR_CNT];
 	unsigned int ratemin[DDIR_RWDIR_CNT];
 	unsigned int ratecycle;
+	unsigned int io_submit_mode;
 	unsigned int rate_iops[DDIR_RWDIR_CNT];
 	unsigned int rate_iops_min[DDIR_RWDIR_CNT];
 
@@ -446,6 +447,7 @@ struct thread_options_pack {
 	uint32_t rate[DDIR_RWDIR_CNT];
 	uint32_t ratemin[DDIR_RWDIR_CNT];
 	uint32_t ratecycle;
+	uint32_t io_submit_mode;
 	uint32_t rate_iops[DDIR_RWDIR_CNT];
 	uint32_t rate_iops_min[DDIR_RWDIR_CNT];
 
@@ -483,7 +485,6 @@ struct thread_options_pack {
 
 	uint64_t latency_target;
 	uint64_t latency_window;
-	uint32_t pad3;
 	fio_fp64_t latency_percentile;
 } __attribute__((packed));
 
